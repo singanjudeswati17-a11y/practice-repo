@@ -1,0 +1,5 @@
+name: Amazon_Web
+description: ''
+tags: ['@smoke']
+environments: {}
+featureFiles: [features/Amazon-feature.feature]

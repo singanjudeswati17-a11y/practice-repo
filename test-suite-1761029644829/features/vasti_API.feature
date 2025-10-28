@@ -1,22 +1,26 @@
 Feature:API
+
 @api
 Scenario: First scenario
-  # Start typing steps below.
-And compose a post request to "https://test-aws-web.vastucorp.com/api/sales_timesheet_view" with headers
-And |stagingtoken|9e107d9d372bb6826bd81d3542a419d6|
+And compose a get request to "https://postman-echo.com/get?foo1=bar1&foo2=bar2" with headers
+|Cookie|__cf_bm=0YwjBACSN5MBoyBaFbD_B7XTe2FwQsL0xrBXUZII4YU-1761552418-1.0.1.1-fKRyHRKjGnYQqsqF8Ba7Hm6xmCPwavJ4z8p8IxpSVvWuaLGYUwHClrJZgZ4drLEZw_KznIWeAYX6s8IcCoCNyEm302llwJjRbjzf1etkbdU; _cfuvid=K0OW5VYBGFX8vbiTq9kvlsn1jivLxW3e2nQhMkQbe8I-1761552418807-0.0.1.1-604800000; sails.sid=s%3AHa8BX3vtTzbEkGSDd1bptFFFRHG0mfrr.ngZhe1%2BAhbufO1BKHDpq1VfK8HFkr10aV0rNULNje7I|
+And execute and save the response as "apiResponse"
+And check that response {apiResponse} has "200" as status code
+
+@api
+Scenario: Second scenario
+And compose a post request to "https://jsonplaceholder.typicode.com/posts" with headers
+|Content-Type|application/json|
 And with the below JSON request
-And """
-And {
- And "username": "user_15@vastuhfc.com",
-And "password": "123456",
-And "deviceid": "b401d05b86dd2f95",
-And "version": "3.2.9",
-And "app_name": "pulse_app",
-And "userid": "15" 
-And }
-And """
-And execute and save the response as "API__response"
-And check that variable {API_response} is equals to "completed" with exact phrase
-And check that response {API_response} has "200" as status code
-  
+"""
+{
+"title": "foo",
+"body": "bare",
+"userId": 1
+}
+"""
+And execute and save the response as "api__response"
+And check that response {api__response} has "201" as status code
+And check that API response {api__response} contains "foo" at "$.title"
+
 
