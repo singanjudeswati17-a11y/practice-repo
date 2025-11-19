@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Nimble Test Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Nimble Test Execution Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Oct 21, 2025 10:37:49 AM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@smoke</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Login to vastu web</p>
+            <p class="text-sm">
+              <span>10:37:57 AM</span> / <span>00:00:00:432</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Login to vastu web</h5>
+<span class='badge badge-success'>10.21.2025 10:37:57 AM</span>
+<span class='badge badge-danger'>10.21.2025 10:37:58 AM</span>
+<span class='badge badge-default'>00:00:00:432</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>login Feature</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="com.nimble.stepDefinitions.UserActionSteps.enter(java.lang.String,java.lang.String,java.lang.String)">
+                <span>And enter "user_4650@vastuhfc.com" into "Email"</span>
+      <div>
+        <textarea disabled class="code-block">com.nimble.exception.ElementNotFoundException: Element with text [Email] not found or not visible.
+	at com.nimble.interactors.WebAppInteractor.getElementByVisibleText(WebAppInteractor.java:175)
+	at com.nimble.interactors.WebAppInteractor.getElementByVisibleText(WebAppInteractor.java:80)
+	at com.nimble.interactors.WebAppInteractor.getElementByVisibleText(WebAppInteractor.java:1)
+	at com.nimble.stepDefinitions.BaseSteps.getElement(BaseSteps.java:134)
+	at com.nimble.stepDefinitions.UserActionSteps.enter(UserActionSteps.java:608)
+	at ?.enter "user_4650@vastuhfc.com" into "Email"(file:///C:/Users/ADMIN/Documents/VIOM/viom-studio/viom-studio/test_suite_repositories/practice-repo-1760606693129/test-suite-1760606919157/execution_20251021_103733/src/test/java/com/nimble/feature/login.feature:4)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.nimble.stepDefinitions.UserActionSteps.enter(java.lang.String,java.lang.String,java.lang.String)">
+                <span>And enter "123456" into "Password"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.nimble.stepDefinitions.UserActionSteps.clickActionMerged(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And click on the 2nd "Login"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.nimble.stepDefinitions.WaitSteps.wait(int)">
+                <span>And wait 5 sec</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step fail-bg" title="AFTER">
+                <span>com.nimble.hooks.Hooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>login_Feature
+          <div class="row mb-3"><div class="col-md-3">
+        <a href="data:image/png;base64,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AACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEA/Lk9YAAAzBSURBVMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGSAAAEIEABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEIIABgAAIAQBDAAAQAgCGAAAgBAEMAAAACEIYAAAAEIQwAAAAIQggAEAAAhBAAMAABCCAAYAACAEAQwAAEAIAhgAAIAQBDAAAAAhCGAAAABCEMAAAACEIIABAAAIQQADAAAQggAGAAAgBAEMAABACAIYAACAEAQwAAAAIQhgAAAAQhDAAAAAhCCAAQAACEEAAwAAEML/BwAA///DT6XCAAAABklEQVQDANzFB4oPqMUdAAAAAElFTkSuQmCC" data-featherlight="image"><span class="badge badge-gradient-primary">base64 img</span></a>
+        
+    </div></div>
+</div>
+      <div>
+        <textarea disabled class="code-block">java.lang.RuntimeException: Teardown step failed because scenario failed
+	at com.nimble.hooks.Hooks.tearDown(Hooks.java:202)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.RuntimeException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.RuntimeException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:37:57 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>com.nimble.hooks.Hooks.tearDown(io.cucumber.java.Scenario)</a>
+<div class="">
+<span class="badge badge-default">Login to vastu web.login Feature.com.nimble.hooks.Hooks.tearDown(io.cucumber.java.Scenario)</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">com.nimble.exception.ElementNotFoundException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>com.nimble.exception.ElementNotFoundException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:37:57 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>And enter "user_4650@vastuhfc.com" into "Email"</a>
+<div class="">
+<span class="badge badge-default">Login to vastu web.login Feature.And enter "user_4650@vastuhfc.com" into "Email"</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@smoke</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@smoke</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:37:57 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>login Feature</a>
+<div class="">
+<span class="badge badge-default">Login to vastu web.login Feature</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Oct 21, 2025 10:37:49 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Oct 21, 2025 10:37:58 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='100%'><b>1</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
+<div>
+<small data-tooltip='40%'><b>2</b> steps failed,
+<b>3</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Login to vastu web":0.432
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@smoke</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 1,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 2,
+warningGrandChild: 0,
+skipGrandChild: 3,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

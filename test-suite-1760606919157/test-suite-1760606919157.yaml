@@ -1,0 +1,5 @@
+name: Login_vastu
+description: ''
+tags: ['@sanity', '@smoke', '@issue']
+environments: {}
+featureFiles: [features/login.feature]
