@@ -1,5 +1,5 @@
 name: Demo_QA
 description: ''
-tags: ['@Demo', '@element']
+tags: ['@Demo', '@element', '@demo']
 environments: {}
 featureFiles: [features/Demo.feature, features/Element.feature, features/Frames.feature]
