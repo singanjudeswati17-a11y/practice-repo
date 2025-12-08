@@ -1,6 +1,12 @@
 Feature: Different Element
 
 @element
+Scenario:button scenario
+And click "Elements"
+And click "Buttons"
+And check that button "Click Me" is enabled
+
+@eleme
 Scenario: First scenario
 And click "Elements"
 And click "Text Box"
@@ -11,13 +17,14 @@ And enter "disha@dk.com" into "name@example.com"
 And enter "vk road Mumbai" into the 2nd "Current Address"
 And click "Submit"
 
-@element
+@eleme
 Scenario: Form scenario
 And click "Forms"
 And click "Practice Form"
 And enter "swati" into "First Name"
-And enter "singh" into "Last Name"
+And type "swati" into "Last Name"
 And enter "hyj@jkh.com" into "name@example.com"
+And read value from the element with id as "firstName" and save it as "name"
 And enter "9865324567" into "Mobile Number"
 And click on the element with id as "dateOfBirthInput"
 And click "20"
