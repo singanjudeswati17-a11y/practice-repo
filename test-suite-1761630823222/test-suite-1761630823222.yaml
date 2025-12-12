@@ -3,3 +3,4 @@ description: ''
 tags: ['@smoke']
 environments: {}
 featureFiles: [features/Amazon-feature.feature]
+id: test-suite-1761630823222

@@ -1,0 +1,6 @@
+id: test-suite-1765436773905
+name: Vastu 2.0
+description: ''
+tags: ['@Functional']
+environments: {}
+featureFiles: [features/Vastu.feature]

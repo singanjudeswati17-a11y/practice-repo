@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Performance Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.1.1/dist/chartjs-chart-matrix.min.js"></script>
+    <style>
+        .card { margin-bottom: 20px; }
+        .table { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Test Performance Dashboard</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Step Duration Distribution</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="stepDurationChart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Feature-wise Performance</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="featurePerformanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Slowest Steps</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Scenario</th>
+                                        <th>Step</th>
+                                        <th>Duration (ms)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="slowestStepsTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Platform Comparison</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="platformComparisonChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Scenario Timeline</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Flagged Steps (Consistently Slow)</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Step</th>
+                                        <th>Occurrences</th>
+                                        <th>Avg Duration (ms)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="flaggedStepsTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Step Duration Trends for Slow Steps (Current Run)</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="stepTrendsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Step Duration Distribution Chart
+        new Chart(document.getElementById('stepDurationChart'), {
+            type: 'bar',
+            data: {
+                labels: ["[App Launch]","enter \"gaurav.g@vastuhfc.com\" ...","enter \"Vastu@123\" into \"Enter ...","click \"Allow\" inside span","click \"Sign in\""],
+                datasets: [{
+                    label: 'Average Duration (ms)',
+                    data: [242.0,104.0,110.0,242.0,60166.0],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(context) {
+                                // Use the full label from the mapping
+                                const label = context[0].label;
+                                return stepLabelMap[label] || label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 30,
+                            autoSkip: false
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Feature Performance Chart
+        new Chart(document.getElementById('featurePerformanceChart'), {
+            type: 'pie',
+            data: {
+                labels: ["enter \"gaurav.g@vastuhfc.com\" into \"Enter your email\"","[App Launch]","enter \"Vastu@123\" into \"Enter your password\"","click \"Allow\" inside span","click \"Sign in\""],
+                datasets: [{
+                    data: [104.0,242.0,110.0,242.0,60166.0],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Populate Slowest Steps Table
+        const slowestSteps = [{"feature":"Vastu.feature","scenario":"Login scenario","step":"click \"Sign in\"","duration":60166},{"feature":"[App Luanch]","scenario":"[App Launch]","step":"[App Launch]","duration":242},{"feature":"Vastu.feature","scenario":"Login scenario","step":"click \"Allow\" inside span","duration":242},{"feature":"Vastu.feature","scenario":"Login scenario","step":"enter \"Vastu@123\" into \"Enter your password\"","duration":110},{"feature":"Vastu.feature","scenario":"Login scenario","step":"enter \"gaurav.g@vastuhfc.com\" into \"Enter your email\"","duration":104}];
+        const tableBody = document.getElementById('slowestStepsTable');
+        slowestSteps.forEach(step => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${step.feature}</td>
+                <td>${step.scenario}</td>
+                <td>${step.step}</td>
+                <td>${step.duration}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+        // Platform Comparison Chart
+        const platformLabels = ["chrome"];
+        const platformData = [11525.35294117647];
+        new Chart(document.getElementById('platformComparisonChart'), {
+            type: 'bar',
+            data: {
+                labels: platformLabels,
+                datasets: [{
+                    label: 'Avg Step Duration (ms)',
+                    data: platformData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const scenarioTimeline = [{"feature":"file:///C:/viom-studio/test_suite_repositories/practice-repo-1765435047810/test-suite-1765436773905/execution_20251211_013303/src/test/java/com/nimble/feature/Vastu.feature","scenario":"Login scenario","start":"2025-12-11T09:33:26.507968500Z","end":"2025-12-11T09:34:33.747268Z"}];
+
+        // Convert ISO strings to Date objects and calculate durations
+        const labels = scenarioTimeline.map(s => s.scenario);
+        const starts = scenarioTimeline.map(s => new Date(s.start).getTime());
+        const ends = scenarioTimeline.map(s => new Date(s.end).getTime());
+        const durations = ends.map((end, i) => end - starts[i]);
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Execution Time (ms)',
+                data: labels.map((_, i) => [starts[i], ends[i]]),
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        new Chart(document.getElementById('timelineChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Scenario Execution',
+                    data: durations,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    // For horizontal bar
+                    indexAxis: 'y'
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Duration (ms)' }
+                    }
+                }
+            }
+        });
+
+        const flaggedSteps = [{"avg_duration":55560.28571428572,"count":7,"step":"click \"Sign in\""}];
+        const stepTrends = [{"avg_duration":60117.0,"build":"20251211_001059646","step":"click \"Sign in\""},{"avg_duration":60097.0,"build":"20251211_001508230","step":"click \"Sign in\""},{"avg_duration":60098.0,"build":"20251211_001945861","step":"click \"Sign in\""},{"avg_duration":60108.0,"build":"20251211_002317634","step":"click \"Sign in\""},{"avg_duration":28234.0,"build":"20251211_003212081","step":"click \"Sign in\""},{"avg_duration":60102.0,"build":"20251211_003800096","step":"click \"Sign in\""},{"avg_duration":60166.0,"build":"20251211_013318190","step":"click \"Sign in\""}];
+
+        // Populate Flagged Steps Table
+        const flaggedTable = document.getElementById('flaggedStepsTable');
+        flaggedSteps.forEach(step => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${step.step}</td>
+                <td>${step.count}</td>
+                <td>${step.avg_duration.toFixed(2)}</td>
+            `;
+            flaggedTable.appendChild(row);
+        });
+
+        // Prepare data for Step Trends Chart
+        const builds = [...new Set(stepTrends.map(t => t.build))];
+        const steps = [...new Set(stepTrends.map(t => t.step))];
+        const datasets = steps.map(step => {
+            return {
+                label: step,
+                data: builds.map(build => {
+                    const found = stepTrends.find(t => t.build === build && t.step === step);
+                    return found ? found.avg_duration : null;
+                }),
+                fill: false,
+                borderColor: '#' + Math.floor(Math.random()*16777215).toString(16),
+                tension: 0.1
+            };
+        });
+
+        new Chart(document.getElementById('stepTrendsChart'), {
+            type: 'line',
+            data: {
+                labels: builds,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Step Duration Trends for Slow Steps (Current Run)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Avg Duration (ms)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
