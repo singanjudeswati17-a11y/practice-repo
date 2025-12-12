@@ -1,0 +1,17 @@
+id: b2a35f4a-f271-4caa-a2c4-78753cdb5064
+name: LMS_Login
+description: Login Module for LMS app
+isGlobal: false
+testSuiteId: test-suite-1765436773905
+parameters:
+- lms_username
+- lms_password
+content: |
+  And click "Allow" inside span
+  And wait 2 sec
+  And enter "{lms_username}" into "Enter your email"
+  And enter "{lms_password}" into "Enter your password"
+  And wait 3 sec
+  And click "Sign in"
+createdAt: '2025-12-12T06:17:33.526789700Z'
+updatedAt: '2025-12-12T06:31:00.832185600Z'

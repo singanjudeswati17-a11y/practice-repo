@@ -1,0 +1,19 @@
+id: f97a2db4-cf13-4149-817d-f68470e36656
+name: LMS_view_details
+description: Navigate to Loan Details page
+isGlobal: false
+testSuiteId: test-suite-1765436773905
+parameters:
+- LAN_value
+content: |-
+  And lick "Credit" inside span
+  And click "Loan Detail" with exact phrase
+  And wait 3 sec
+  And enter "{LAN_value}" into "Type to search"
+  And wait 2 sec
+  And click on the element with class "ant-space css-1tbz80h ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle"
+  And wait 5 sec
+  And check that screen contains "Loan Account Number"
+  And check that screen contains "Loan Application Progress
+createdAt: '2025-12-12T10:21:42.166302900Z'
+updatedAt: '2025-12-12T10:26:58.635684700Z'

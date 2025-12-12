@@ -1,6 +1,6 @@
 id: test-suite-1765436773905
-name: Vastu 2.0
+name: LMS_Web
 description: ''
-tags: ['@Functional']
+tags: ['@view_loan_details', '@regression', '@lms_regression']
 environments: {}
-featureFiles: [features/Vastu.feature]
+featureFiles: [features/Lead.feature]

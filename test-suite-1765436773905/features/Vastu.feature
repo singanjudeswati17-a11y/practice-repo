@@ -1,23 +1,29 @@
+@view_loan_details @regression @lms_regression
 Feature: Credit feature
-@Functional
 Scenario: Login scenario
-And click "Allow" inside span
-And wait 2 sec
-And enter "gaurav.g@vastuhfc.com" into "Enter your email"
-And enter "Vastu@123" into "Enter your password"
-And wait 3 sec
-And click "Sign in"
-  
-@Functional
-Scenario: Credit scenario
-And click "Credit" inside span
-And click on the 2nd "Loan Detail"
-And click on the element with class "anticon anticon-eye view_button_loan_list"
-And check that screen contains "HL0000000084119"
-And click " View Detailed Progress "
-And check that screen contains "Application Stages"
+{module:LMS_Login(lms_username="gaurav.g@vastuhfc.com", lms_password="Vastu@123")}
 
-@Functional
+Scenario: View Detailed scenario
+{module:LMS_view_details(LAN_value="value")}
+
 Scenario: Lead scenario
-And click "stage_icons"
+And click "View Detailed Progress "
+And check that screen contains "Application Stages"
+And check that screen contains "Lead"
+And check that screen contains "Loan Application Progress"
+And click on the element with class "stage_icons"
+And wait 2 sec
+And click on the element with id as "assign_to"
+And click "Harshal Sawant (EMP54605)"
+And click on the element with id as "queries_0_sub_section"
+And click "Add Customer"
+And click on the element with id as "queries_0_customer_type" 
+And click "Co-Applicant"
+And click on the element with id as "queries_0_reason"
+And click "Female customer not present in case"
+And click "KYC"
+And click "Submit"
+
+
+
 

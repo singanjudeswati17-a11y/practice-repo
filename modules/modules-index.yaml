@@ -1,0 +1,10 @@
+modules:
+- id: b2a35f4a-f271-4caa-a2c4-78753cdb5064
+  name: LMS_Login
+  isGlobal: false
+  testSuiteId: test-suite-1765436773905
+- id: f97a2db4-cf13-4149-817d-f68470e36656
+  name: LMS_view_details
+  isGlobal: false
+  testSuiteId: test-suite-1765436773905
+lastUpdated: '2025-12-12T10:26:58.667689200Z'
