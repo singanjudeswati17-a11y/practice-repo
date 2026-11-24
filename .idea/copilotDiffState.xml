@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/test/java/hooks/Hooks.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/test/java/hooks/Hooks.java" />
+              <option name="originalContent" value="package hooks;&#10;&#10;import factory.DriverFactory;&#10;import io.cucumber.java.After;&#10;import io.cucumber.java.Before;&#10;&#10;public class Hooks {&#10;&#10;        @Before&#10;        public void setup() {&#10;&#10;            DriverFactory.getDriver();&#10;        }&#10;&#10;        @After&#10;        public void tearDown() {&#10;&#10;            DriverFactory.quitDriver();&#10;        }&#10;&#10;}&#10;" />
+              <option name="updatedContent" value="package hooks;&#13;&#10;&#13;&#10;import factory.DriverFactory;&#13;&#10;import io.cucumber.java.After;&#13;&#10;import io.cucumber.java.Before;&#13;&#10;import pages.LoginPage;&#13;&#10;&#13;&#10;public class Hooks {&#13;&#10;&#13;&#10;    @Before&#13;&#10;    public void setup() {&#13;&#10;&#13;&#10;        // initialize driver&#13;&#10;        DriverFactory.getDriver();&#13;&#10;&#13;&#10;        // ensure application is opened and user is logged in for scenarios that don't explicitly launch the app&#13;&#10;        // if your app URL or credentials are different, update them here or move to a config file&#13;&#10;        DriverFactory.getDriver().get(&quot;http://localhost:3000/login&quot;);&#13;&#10;&#13;&#10;        // perform login if the application redirects to an external provider&#13;&#10;        new LoginPage(DriverFactory.getDriver()).loginIfRequired(&#13;&#10;                &quot;testuser@gmail.com&quot;,&#13;&#10;                &quot;Password@123&quot;&#13;&#10;        );&#13;&#10;    }&#13;&#10;&#13;&#10;    @After&#13;&#10;    public void tearDown() {&#13;&#10;&#13;&#10;        DriverFactory.quitDriver();&#13;&#10;    }&#13;&#10;&#13;&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
